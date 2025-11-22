@@ -1,6 +1,12 @@
 name: Hot News Crawler
 on:
   workflow_dispatch:  # 显示手动运行按钮
+  # 可选：如果需要传参数，可添加inputs（无参数则留空即可）
+    inputs:
+      crawl_source:
+        description: "爬取来源（可选）"
+        required: false
+        default: "all"
   schedule:
     - cron: "0 0 * * *"  # 每天0点运行(可根据需要调整)
 
